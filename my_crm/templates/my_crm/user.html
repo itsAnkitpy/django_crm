@@ -1,0 +1,240 @@
+{% extends 'my_crm/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mb-4 mt-1">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <h4 class="font-weight-bold">Overview</h4>
+                    <div class="form-group mb-0 vanila-daterangepicker d-flex flex-row">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="">
+                                        <p class="mb-2 text-secondary">Total Orders</p>
+                                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                                            <h5 class="mb-0 font-weight-bold">{{total_orders}}</h5>
+                                            <p class="mb-0 ml-3 text-success font-weight-bold"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="">
+                                        <p class="mb-2 text-secondary">Orders Delivered</p>
+                                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                                            <h5 class="mb-0 font-weight-bold">{{delivered}}</h5>
+                                            <p class="mb-0 ml-3 text-success font-weight-bold"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="">
+                                        <p class="mb-2 text-secondary">Out for Delivery</p>
+                                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                                            <h5 class="mb-0 font-weight-bold">{{out_for_delivery}}</h5>
+                                            <p class="mb-0 ml-3 text-danger font-weight-bold"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="">
+                                        <p class="mb-2 text-secondary">Pending</p>
+                                        <div class="d-flex flex-wrap justify-content-start align-items-center">
+                                            <h5 class="mb-0 font-weight-bold">{{pending}}</h5>
+                                            <p class="mb-0 ml-3 text-danger font-weight-bold"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-page">
+            <div class="container-fluid">
+                <div class="row">            
+                    <div class="col-lg-12">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+                            <div class="d-flex align-items-center justify-content-between">
+                                    <nav aria-label="breadcrumb">
+                                        
+                                    </nav>
+                            </div>    
+                                                        
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3 d-flex justify-content-between">
+                        <h4 class="font-weight-bold d-flex align-items-center">Customer View</h4>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div>
+                                        <ul class="list-style-1 mb-0">
+                                            <li class="list-item d-flex justify-content-start align-items-center">
+                                                <div class="avatar">
+                                                    <img class="avatar avatar-img avatar-60 rounded-circle" src="{{request.user.customer.profile_pic.url}}" alt="01.jpg" />                        
+                                                </div>
+                                                <div class="list-style-detail ml-4 mr-2">
+                                                    <h5 class="font-weight-bold">{{user.customer.name}}</h5>
+                                                </div>                                        
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-6 text-center mb-2">
+                                            <button class="btn btn-block btn-sm btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                </svg>
+                                                <span class="">Message</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-6 text-center mb-2">
+                                            <button class="btn btn-block btn-sm btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                                <a href="{% url 'account' %}"class="">Edit Profile</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <table class="table table-borderless mb-0">
+                                        <tr>
+                                            <td class="p-0">
+                                                <p class="mb-0 text-muted">Email ID</p>                                        
+                                            </td>
+                                            <td>
+                                                <p class="mb-0 ">{{user.customer.email}}</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="p-0">
+                                                <p class="mb-0 text-muted">Phone</p>                                        
+                                            </td>
+                                            <td>
+                                                <p class="mb-0 ">{{user.customer.phone}}</p>
+                                            </td>
+                                        </tr>
+                                       
+                                        
+                                    </table>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                
+        
+                                <div class="tab-content">
+                                    <div id="invoice" class="tab-pane fade show active">
+                                        <div class="d-flex justify-content-between align-items-center p-3">
+                                            <h5>My Products ({{orders_count}} items)</h5>
+                                        </div>
+        
+                                        
+                                        <div class="table-responsive">
+                                            <table class="table data-table mb-0">
+                                                <thead class="table-color-heading">
+                                                    <tr class="text-muted">
+                                                    <th scope="col">Product</th>
+                                                    <th scope="col">Date </th>
+                                                    <th scope="col">Category</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col" class="text-right">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for order in orders %}
+                                                    <tr>
+                                                        <td>{{order.product}}</td>
+                                                        <td>{{order.date_created}}</td>
+                                                        <td>
+                                                            {{order.product.category}}
+                                                        </td>
+                                                        <td>
+                                                            <p class="mb-0 text-success d-flex justify-content-start align-items-center">
+                                                                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="18" viewBox="0 0 24 24" fill="none">                                                
+                                                                    <circle cx="12" cy="12" r="8" fill="#3cb72c"></circle></svg>
+                                                                    {{order.status}}
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex justify-content-end align-items-center">
+                                                                <a href="{% url 'update_order' order.id %}" class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                                    </svg>
+                                                                </a>
+                                                                <a href="{% url 'delete_order' order.id %}" class="badge bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                                    </svg>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

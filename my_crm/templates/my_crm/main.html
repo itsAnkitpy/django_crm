@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django CRM</title>
+
+    <link rel="stylesheet" href="{% static 'css/backend-plugin.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/backende209.css' %}">
+</head>
+<body class="   ">
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+
+    <div class="wrapper">
+        {% include 'my_crm/navbar.html' %}
+
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    
+    
+
+<!-- Javascript Bundle -->
+<script src="{% static 'js/backend-bundle.min.js' %}"></script>
+<!-- Chart Custom JavaScript -->
+<script src="{% static 'js/customizer.js' %}"></script>
+
+<script src="{% static 'js/sidebar.js' %}"></script>
+
+<!-- Flextree Javascript-->
+<script src="{% static 'js/flex-tree.min.js' %}"></script>
+<script src="{% static 'js/tree.js' %}"></script>
+
+<!-- Table Treeview JavaScript -->
+<script src="{% static 'js/table-treeview.js' %}"></script>
+
+<!-- SweetAlert JavaScript -->
+<script src="{% static 'js/sweetalert.js' %}"></script>
+
+<!-- Vectoe Map JavaScript -->
+<script src="{% static 'js/vector-map-custom.js' %}"></script>
+
+<!-- Chart Custom JavaScript -->
+<script src="{% static 'js/chart-custom.js' %}"></script>
+<script src="{% static 'js/charts/01.js' %}"></script>
+<script src="{% static 'js/charts/02.js' %}"></script>
+
+<!-- slider JavaScript -->
+<script src="{% static 'js/slider.js' %}"></script>
+
+<!-- Emoji picker -->
+<script src="{% static 'vendor/emoji-picker-element/index.js' %}" type="module"></script>
+
+
+<!-- app JavaScript -->
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

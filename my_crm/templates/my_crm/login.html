@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Django CRM</title>
+
+   <link rel="stylesheet" href="{% static 'css/backend-plugin.min.css' %}">
+   <link rel="stylesheet" href="{% static 'css/backende209.css' %}">
+</head>
+
+<body class=" ">
+   <div id="loading">
+      <div id="loading-center">
+      </div>
+   </div>
+   <!-- loader END -->
+
+   <div class="wrapper">
+
+      <section class="login-content">
+         <div class="container h-100">
+            <div class="row align-items-center justify-content-center h-100">
+               <div class="col-md-5">
+                  <div class="card p-3">
+                     <div class="card-body">
+
+                        <h3 class="mb-3 font-weight-bold text-center">Sign In</h3>
+                        <p class="text-center text-secondary mb-4">Log in to your account to continue</p>
+
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+
+                        <form method="POST">
+                           {% csrf_token %}
+                           <div class="row">
+                              <div class="col-lg-12">
+                                 <div class="form-group">
+                                    <label class="text-secondary">Username</label>
+                                    <input class="form-control" type="text" name="username"
+                                       placeholder="Enter Username">
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 mt-2">
+                                 <div class="form-group">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                       <label class="text-secondary">Password</label>
+                                       <label><a href="{% url 'reset_password' %}">Forgot Password?</a></label>
+                                    </div>
+                                    <input class="form-control" type="password" name="password"
+                                       placeholder="Enter Password">
+                                 </div>
+                              </div>
+                           </div>
+                           <button type="submit" class="btn btn-primary btn-block mt-2">Log In</button>
+
+
+                           <div class="col-lg-12 mt-3">
+                              <p class="mb-0 text-center">Don't have an account? <a href="{% url 'register' %}">Sign
+                                    Up</a>
+                              </p>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+
+   <!-- Javascript Bundle -->
+   <script src="{% static 'js/backend-bundle.min.js' %}"></script>
+   <!-- Chart Custom JavaScript -->
+   <script src="{% static 'js/customizer.js' %}"></script>
+
+   <script src="{% static 'js/sidebar.js' %}"></script>
+
+   <!-- Flextree Javascript-->
+   <script src="{% static 'js/flex-tree.min.js' %}"></script>
+   <script src="{% static 'js/tree.js' %}"></script>
+
+   <!-- Table Treeview JavaScript -->
+   <script src="{% static 'js/table-treeview.js' %}"></script>
+
+   <!-- SweetAlert JavaScript -->
+   <script src="{% static 'js/sweetalert.js' %}"></script>
+
+   <!-- Vectoe Map JavaScript -->
+   <script src="{% static 'js/vector-map-custom.js' %}"></script>
+
+   <!-- Chart Custom JavaScript -->
+   <script src="{% static 'js/chart-custom.js' %}"></script>
+   <script src="{% static 'js/charts/01.js' %}"></script>
+   <script src="{% static 'js/charts/02.js' %}"></script>
+
+   <!-- slider JavaScript -->
+   <script src="{% static 'js/slider.js' %}"></script>
+
+   <!-- Emoji picker -->
+   <script src="{% static 'vendor/emoji-picker-element/index.js' %}" type="module"></script>
+
+
+   <!-- app JavaScript -->
+   <script src="{% static 'js/app.js' %}"></script>
+
+   <script>
+
+      //Query All input fields
+      var form_fields = document.getElementsByTagName('input')
+
+      for (var field in form_fields) {
+         form_fields[field].className += ' form-control'
+      }
+   </script>
+</body>
+
+</html>
